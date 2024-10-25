@@ -123,9 +123,9 @@ class _HomePageState extends State<HomePage> {
           createNewTask();
         },
 
-        child: const Icon(Icons.add),
-
         backgroundColor: const Color.fromARGB(255, 130, 211, 236),
+
+        child: const Icon(Icons.add),
       ),
 
     );
