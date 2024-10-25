@@ -21,12 +21,15 @@ class MyApp extends StatelessWidget {
 
       theme: ThemeData(
         useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue, brightness: Brightness.light)
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue.shade300, brightness: Brightness.light),
+        scaffoldBackgroundColor: const Color.fromARGB(255, 243, 248, 252)
       ),
 
       darkTheme: ThemeData(
         useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue, brightness: Brightness.dark)
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue, brightness: Brightness.dark),
+        primaryColorLight: Colors.blue.shade300,
+        cardColor: const Color.fromARGB(255, 143, 199, 245).withAlpha(30)
       ),
     );
   }

@@ -92,18 +92,23 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
 
-      backgroundColor: const Color.fromARGB(255, 228, 238, 241),
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
 
       appBar: AppBar(
-        title: const Text(
-          'To Do',
-          style: TextStyle(
-            fontWeight: FontWeight.w500
+        title: const Padding(
+          padding: EdgeInsets.only(left: 10.0),
+
+          child: Text(
+            'To Do',
+            style: TextStyle(
+              fontWeight: FontWeight.w500
+            ),
           ),
         ),
 
-        backgroundColor: const Color.fromARGB(255, 130, 211, 236),
-        elevation: 0,
+        backgroundColor: Theme.of(context).primaryColorLight,
+        elevation: 3,
+        shadowColor: Theme.of(context).shadowColor,
       ),
 
       body: ListView.builder(
@@ -123,7 +128,7 @@ class _HomePageState extends State<HomePage> {
           createNewTask();
         },
 
-        backgroundColor: const Color.fromARGB(255, 130, 211, 236),
+        backgroundColor: Theme.of(context).primaryColorLight,
 
         child: const Icon(Icons.add),
       ),

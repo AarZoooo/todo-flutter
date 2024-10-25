@@ -17,7 +17,7 @@ class DialogBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).dialogBackgroundColor,
 
       content: SizedBox(
         height: 120,
@@ -34,10 +34,10 @@ class DialogBox extends StatelessWidget {
               decoration: InputDecoration(
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
                 hintText: 'Enter your task',
-                hintStyle: const TextStyle(color: Colors.grey),
-                focusedBorder: const OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
-                  borderSide: BorderSide(color: Colors.black))
+                hintStyle: TextStyle(color: Theme.of(context).disabledColor),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: const BorderRadius.all(Radius.circular(10)),
+                  borderSide: BorderSide(color: Theme.of(context).dividerColor))
               ),
 
             ),

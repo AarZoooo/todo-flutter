@@ -29,12 +29,14 @@ class TodoTile extends StatelessWidget {
 
       child: Slidable(
         endActionPane: ActionPane(
+          extentRatio: 0.2,
           motion: const StretchMotion(),
           children: [
             SlidableAction(
               onPressed: deleteFunction,
               icon: Icons.delete,
-              backgroundColor: Colors.red.shade300,
+              foregroundColor: Colors.red.shade300,
+              backgroundColor: Theme.of(context).scaffoldBackgroundColor,
               borderRadius: BorderRadius.circular(10),
             ),
           ]
@@ -42,10 +44,18 @@ class TodoTile extends StatelessWidget {
 
         child: Container(
           padding: const EdgeInsets.all(10),
-        
+
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: Theme.of(context).cardColor,
             borderRadius: BorderRadius.circular(10),
+            boxShadow: [
+              BoxShadow(
+                color: Theme.of(context).shadowColor.withAlpha(20),
+                spreadRadius: 2,                     // How far the shadow spreads
+                blurRadius: 6,                      // Softness of the shadow
+                offset: Offset(3, 3),                // Shadow position (x, y)
+              )
+            ]
           ),
         
           child: Row(
@@ -54,15 +64,21 @@ class TodoTile extends StatelessWidget {
                 value: taskCompleted,
                 onChanged: onChanged,
         
-                activeColor: const Color.fromARGB(255, 130, 211, 236),
+                activeColor: Theme.of(context).primaryColor,
               ),
         
               Text(
                 taskName,
                 style: TextStyle(
                   decoration: taskCompleted
-                  ? TextDecoration.lineThrough
-                  : TextDecoration.none,
+                    ? TextDecoration.lineThrough
+                    : TextDecoration.none,
+
+                  color: taskCompleted
+                    ? Theme.of(context).disabledColor
+                    : Theme.of(context).textTheme.bodySmall?.color,
+
+                  decorationColor: Theme.of(context).disabledColor,
                 ),
               ),
             ],
