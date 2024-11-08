@@ -53,7 +53,7 @@ class TodoTile extends StatelessWidget {
                 color: Theme.of(context).shadowColor.withAlpha(20),
                 spreadRadius: 2,                     // How far the shadow spreads
                 blurRadius: 6,                      // Softness of the shadow
-                offset: Offset(3, 3),                // Shadow position (x, y)
+                offset: const Offset(3, 3),                // Shadow position (x, y)
               )
             ]
           ),
